@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My English Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #fff176);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 50px;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .topic {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.3rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .topic:hover {
+      transform: translateY(-5px);
+      background: #ffe4e1;
+      color: #222;
+    }
+
+    /* Підкатегорії */
+    .category {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .category h2 {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      transition: background 0.3s;
+    }
+
+    .category h2:hover {
+      background: rgba(255, 182, 193, 0.5);
+    }
+
+    .subcategory {
+      display: none;
+      margin-left: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Вкладки підкатегорій */
+    .subcategory h3 {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 8px;
+      margin: 5px 0;
+    }
+
+    .subcategory p {
+      margin: 5px 0 10px 10px;
+    }
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🍂 Autumn Activities 🍁</h1>
+
+    <!-- Категорії -->
+    <div class="category">
+      <h2 onclick="toggleSub('grammar')">Grammar</h2>
+      <div id="grammar" class="subcategory">
+        <h3 onclick="toggleSub('grammar1')">Past Simple</h3>
+        <p id="grammar1">This is a Past Simple exercise...</p>
+        <h3 onclick="toggleSub('grammar2')">Present Continuous</h3>
+        <p id="grammar2">This is a Present Continuous exercise...</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2 onclick="toggleSub('listening')">Listening</h2>
+      <div id="listening" class="subcategory">
+        <h3 onclick="toggleSub('listen1')">Audio 1</h3>
+        <p id="listen1">Listen and answer questions...</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2 onclick="toggleSub('vocabulary')">Vocabulary</h2>
+      <div id="vocabulary" class="subcategory">
+        <h3 onclick="toggleSub('vocab1')">Autumn Words</h3>
+        <p id="vocab1">Leaf, pumpkin, harvest...</p>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2 onclick="toggleSub('exercises')">Exercises</h2>
+      <div id="exercises" class="subcategory">
+        <h3 onclick="toggleSub('ex1')">Exercise 1</h3>
+        <p id="ex1">Fill in the blanks...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleSub(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === "none" || el.style.display === "") {
+        el.style.display = "block";
+      } else {
+        el.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
