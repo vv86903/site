@@ -3,37 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autumn Activities</title>
+  <title>My English Website</title>
   <style>
+    /* Фон градієнт */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ffb6c1, #ffd54f);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #fff176);
+    }
+
+    /* Контейнер */
+    .container {
       text-align: center;
-      color: #4a2c2a;
     }
 
     h1 {
-      font-size: 4rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333;
     }
 
-    .container {
-      background: rgba(255, 255, 255, 0.6);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    /* Кнопка-тема */
+    .topic {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 1.3rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #444;
+      font-weight: 600;
+    }
+
+    .topic:hover {
+      transform: translateY(-5px);
+      background: #ffe4e1;
+      color: #222;
     }
   </style>
+
+  <!-- Шрифт Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>🍂 Autumn Activities 🍁</h1>
-    <p>Welcome to our learning page</p>
+    <h1>Choose a Topic</h1>
+    <a class="topic" href="autumn.html">🍂 Autumn Activities</a>
   </div>
 </body>
 </html>
