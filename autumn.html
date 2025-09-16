@@ -1,10 +1,10 @@
 <div class="category">
   <h2 onclick="toggleSub('listening')">Listening</h2>
   <div id="listening" class="subcategory">
-    <h3>Autumn Video True/False Exercise</h3>
-    <p>📹 Watch and listen carefully to the video, then answer the questions below:</p>
+    <h3>📹 Autumn Video True/False Exercise</h3>
+    <p>Watch and listen carefully to the video, then answer the questions below:</p>
     
-    <!-- Запитання -->
+    <!-- True/False Questions -->
     <div class="tf-question" data-answer="false">
       <p>1. The story is about winter.</p>
       <button onclick="checkAnswer(this)">True</button>
@@ -53,12 +53,10 @@
       <button onclick="checkAnswer(this)">False</button>
       <div class="tf-feedback"></div>
     </div>
-    
   </div>
 </div>
 
 <style>
-/* True/False стиль */
 .tf-question {
   margin: 15px 0;
   padding: 15px;
@@ -102,7 +100,6 @@ function checkAnswer(btn) {
   } else {
     feedbackDiv.style.color = "red";
 
-    // Додаємо пояснення
     let explanation = "";
     const questionText = questionDiv.querySelector("p").textContent;
 
