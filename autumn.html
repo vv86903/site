@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My English Website</title>
+  <title>Autumn Activities</title>
   <style>
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #ffb6c1, #fff176);
+      background: linear-gradient(135deg, #ffb6c1, #ffd54f);
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -19,37 +19,15 @@
     .container {
       text-align: center;
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 40px;
-      color: #333;
+      color: #4a2c2a;
     }
 
-    .topic {
-      display: inline-block;
-      padding: 20px 40px;
-      font-size: 1.3rem;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      color: #444;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .topic:hover {
-      transform: translateY(-5px);
-      background: #ffe4e1;
-      color: #222;
-    }
-
-    /* Підкатегорії */
     .category {
       text-align: left;
       margin-top: 20px;
@@ -72,12 +50,11 @@
       display: none;
       margin-left: 20px;
       background: rgba(255, 255, 255, 0.5);
-      padding: 10px;
+      padding: 15px;
       border-radius: 10px;
       margin-bottom: 10px;
     }
 
-    /* Вкладки підкатегорій */
     .subcategory h3 {
       cursor: pointer;
       background: rgba(255, 255, 255, 0.7);
@@ -90,6 +67,36 @@
       margin: 5px 0 10px 10px;
     }
 
+    /* True/False Questions */
+    .tf-question {
+      margin: 15px 0;
+      padding: 15px;
+      background: rgba(255, 228, 196, 0.5);
+      border-radius: 12px;
+    }
+
+    .tf-question p {
+      margin-bottom: 10px;
+    }
+
+    .tf-question button {
+      margin-right: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .tf-question button:hover {
+      background: rgba(255, 182, 193, 0.5);
+    }
+
+    .tf-feedback {
+      margin-top: 10px;
+      font-weight: 600;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -97,7 +104,7 @@
   <div class="container">
     <h1>🍂 Autumn Activities 🍁</h1>
 
-    <!-- Категорії -->
+    <!-- Grammar -->
     <div class="category">
       <h2 onclick="toggleSub('grammar')">Grammar</h2>
       <div id="grammar" class="subcategory">
@@ -108,14 +115,77 @@
       </div>
     </div>
 
+    <!-- Listening -->
     <div class="category">
       <h2 onclick="toggleSub('listening')">Listening</h2>
       <div id="listening" class="subcategory">
-        <h3 onclick="toggleSub('listen1')">Audio 1</h3>
-        <p id="listen1">Listen and answer questions...</p>
+        <h3>📹 Autumn Video True/False Exercise</h3>
+        <p>Watch and listen carefully to the video, then answer the questions below:</p>
+
+        <!-- Відео -->
+        <div style="text-align:center; margin: 15px 0;">
+          <iframe width="100%" height="315" 
+            src="https://www.youtube.com/embed/coUoR7pzb1E" 
+            title="Autumn Video" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        
+        <!-- True/False Questions -->
+        <div class="tf-question" data-answer="false">
+          <p>1. The story is about winter.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="true">
+          <p>2. The leaves turn yellow, brown, red, and orange in autumn.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="false">
+          <p>3. The weather is warm and sunny in autumn.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="true">
+          <p>4. Children wear coats, scarves, and hats in autumn.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="true">
+          <p>5. Autumn is the season after summer.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="false">
+          <p>6. The trees have green leaves all year.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
+        <div class="tf-question" data-answer="true">
+          <p>7. Autumn is my favourite season.</p>
+          <button onclick="checkAnswer(this)">True</button>
+          <button onclick="checkAnswer(this)">False</button>
+          <div class="tf-feedback"></div>
+        </div>
+
       </div>
     </div>
 
+    <!-- Vocabulary -->
     <div class="category">
       <h2 onclick="toggleSub('vocabulary')">Vocabulary</h2>
       <div id="vocabulary" class="subcategory">
@@ -124,6 +194,7 @@
       </div>
     </div>
 
+    <!-- Exercises -->
     <div class="category">
       <h2 onclick="toggleSub('exercises')">Exercises</h2>
       <div id="exercises" class="subcategory">
@@ -141,6 +212,47 @@
         el.style.display = "block";
       } else {
         el.style.display = "none";
+      }
+    }
+
+    function checkAnswer(button) {
+      const questionDiv = button.parentElement;
+      const userAnswer = button.textContent.toLowerCase();
+      const correctAnswer = questionDiv.dataset.answer;
+      const feedbackDiv = questionDiv.querySelector(".tf-feedback");
+
+      let explanation = "";
+
+      switch(questionDiv.querySelector("p").textContent) {
+        case "1. The story is about winter.":
+          explanation = "❌ False — The story is about autumn.";
+          break;
+        case "2. The leaves turn yellow, brown, red, and orange in autumn.":
+          explanation = "✅ True";
+          break;
+        case "3. The weather is warm and sunny in autumn.":
+          explanation = "❌ False — The weather is cool and windy.";
+          break;
+        case "4. Children wear coats, scarves, and hats in autumn.":
+          explanation = "✅ True";
+          break;
+        case "5. Autumn is the season after summer.":
+          explanation = "✅ True";
+          break;
+        case "6. The trees have green leaves all year.":
+          explanation = "❌ False — The leaves change color in autumn.";
+          break;
+        case "7. Autumn is my favourite season.":
+          explanation = "✅ True";
+          break;
+        default:
+          explanation = "";
+      }
+
+      if(userAnswer === correctAnswer) {
+        feedbackDiv.textContent = explanation;
+      } else {
+        feedbackDiv.textContent = explanation;
       }
     }
   </script>
